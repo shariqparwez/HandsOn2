@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Place Order</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="scripts/order.js"></script>
+</head>
+
+<body>
+	<h1>PLACE ORDER</h1>
+	<form>
+	<table id="customers">
+		<tr>
+			<td class="left"><label>Customer Name</label></td>
+			<td><input type="text" id="cname"></td>
+		</tr>
+		<tr>
+			<td class="left"><label>Location</label></td>
+			<td><select name="dropdown" id="loc">
+					<option value="New Delhi" selected>New Delhi</option>
+					<option value="Gurgaon">Gurgaon</option>
+					<option value="Chennai">Chennai</option>
+					<option value="Bangalore">Bangalore</option>
+					</td>
+		</tr>
+		<tr>
+			<td class="left"><label>Payment Mode</label></td>
+			<td><input id="r1" type="radio" name="paymode" value="Netbanking"> Net Banking
+				<input id="r2" type="radio" name="paymode" value="VISA"> VISA
+				<input id="r3" type="radio" name="paymode" value="Masters"> Masters
+			</td>
+		</tr>
+		<tr>
+			<td class="left"><label>Choose Offers</label></td>
+			<td><input type="checkbox" name="offer" value="Redeem Points"> Redeem Points
+				<input type="checkbox" name="offer" value="Movie Ticket"> Movie Ticket
+				<input type="checkbox" name="offer" value="Cashback"> Cashback
+		</tr>
+		<tr>
+			<td class="bottom"><input id="sub" type="submit" name="submit" value="Submit" /></td>
+			<td class="bottom"><input type="reset" name="reset"  value="Reset" /></td>
+		</tr>
+	</table>
+	</form>
+	
+	<script type="text/javascript">
+		var element = document.getElementById("cname");
+		element.addEventListener('blur', function(){
+			nameCheck(cname.value)});
+		
+		var ele = document.getElementById("sub");
+		ele.addEventListener('click', function(){
+			summaryDisplay()});
+	</script>
+</body>
+</html>

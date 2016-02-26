@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Place Order</title>
+<script type="text/javascript" src="Scripts/External.js"></script>
+<script type="text/javascript">
+     var itemlist=[
+              {
+            	  "name":"capachinno",
+            	  "price":250
+              }, 
+              {
+                  "name":"Latte",
+                  "price":180
+              },
+              {
+                  "name":"Expresso",
+                  "price":220
+              },
+              {
+                  "name":"Tea",
+                  "price":120
+              },
+              {
+                  "name":"Milk",
+                  "price":80
+              }
+            ];
+</script>
+</head>
+<body Style="align:Center;">
+    <h1>Place Order</h1>
+    <form method="post" action="banking.html"  >
+	    <table border="5px">
+		      <tr>
+		          <td><input type="checkbox" value="" onclick="calTotal(this)" id="1"/></td>
+			        <td id="1n"></td>
+			        <td id="1p"></td>
+		      </tr>
+		      
+		      <tr>
+		          <td><input type="checkbox" value="" onclick="calTotal(this)" id="2"/></td>
+			        <td id="2n"></td>
+              <td id="2p"></td>
+		      </tr>
+		      
+		      <tr>
+		          <td><input type="checkbox" value="" onclick="calTotal(this)" id="3"/></td>
+			        <td id="3n"></td>
+              <td id="3p"></td>
+		      </tr>
+		      
+		      <tr>
+		          <td><input type="checkbox" value="" onclick="calTotal(this)" id="4"/></td>
+			        <td id="4n"></td>
+              <td id="4p"></td>
+		      </tr>
+		      
+		      <tr>
+		          <td><input type="checkbox" value="" onclick="calTotal(this)" id="5"/></td>
+			        <td id="5n"></td>
+              <td id="5p"></td>
+		      </tr>
+			    <tr >
+				      <td colspan="2">Total</td>
+				      <td ><input type="text" value="0" name="total" id="total"></td>
+			    </tr>  
+	    </table>
+	    <br/>
+	    <input type="submit" value="Make Payment" onclick="confirmValues()"/>
+    </form>
+</body>
+<script type="text/javascript">
+		for(i=1;i<=itemlist.length;i++)
+		{
+			  document.getElementById(i).value=itemlist[i-1].price;
+			  document.getElementById(i+"n").innerHTML=itemlist[i-1].name;
+		    document.getElementById(i+"p").innerHTML=itemlist[i-1].price;
+		    
+		}
+</script>
+</html>
